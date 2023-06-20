@@ -1,0 +1,31 @@
+{% extends 'main/login.html' %}
+
+{% block content %}
+	<h2>(List item)</h2>
+
+	{% for x in pf %}
+		{{x.title}}
+	{% endfor %}
+	<p></p>
+	<h2>(List image)</h2>
+	{% for x in page_obj %}
+		<h2>{{x.title}}</h2>
+		<p><img src="{{x.image.url}}" width="50%"></p>
+		{{x.body}}
+	{% endfor%}
+	<div class="paginator" style="display: flex;justify-content: center;">
+		<span class="step-links">
+			{% if page_obj.has_previous %}
+				<a href="?page=1">&laquo;1</a>
+				<a href="?page={{ page_obj.previous_page_number }}">Prev</a>
+			{% endif %}
+			<span class="current">
+				Page {{ page_obj.number }}
+			</span>
+			{% if page_obj.has_next %}
+				<a href="?page={{ page_obj.next_page_number }}">Next</a>
+				<a href="?page={{ page_obj.panigator.num_pages }}">Last({{ page_obj.paginator.num_pages }})&raquo;</a>
+			{% endif %}
+		</span>
+	</div>
+{% endblock %}

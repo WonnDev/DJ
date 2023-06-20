@@ -1,0 +1,11 @@
+{% extends 'main/login.html' %}
+
+{% block content %}
+	<h2>UPLOAD FILE</h2>
+	<form action="{% url 'getFile' %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{UF.as_p}}
+		<input type="submit" name="submit">
+	</form>
+	
+{% endblock %}

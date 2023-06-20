@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title> Demo Login Website </title>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" type="text/css" href="{% static 'loginregister.css' %}"> -->
+		<link rel="stylesheet" type="text/css" href="/static/loginregister.css">
+	</head>
+
+	<body>
+		<div class="row bg_body">	
+			<div class=" col-4 bg-left">
+				<div class="row d-flex" style="flex-direction: column; align-items: center;">
+					<div class="top-left">
+						<div class="logo">
+							<a href=""><img class="logo-inf" src="https://thuocgreen.vn/image/626837cfa5f5bc458e195dfb/thumbnail.jpg" alt=""></a>
+						</div>
+						<div class="sologan">
+							<p style="margin-bottom: 0; font-weight: bolder;font-size: 20px; color: #275c51;">Chào mừng bạn đến với <h4 style="color: #275c51;font-weight: bolder;"> ThuocGreen </h4></p>
+						</div>
+					</div>
+					<div class="bot-left">
+						<div class="img">
+							<div class="style-div">Image
+								<img src="/media/django.png" style="width: 100%">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class=" col-8 bg-right ">
+				<div class="d-flex" style="flex-direction: column;/*height: 100vh;*/justify-content: center;">
+					<div class="d-flex" style="flex-direction: column; align-items: center;justify-content: center;">
+						<div class="text-banner style-div text-color ">
+							<p style="font-size: 25px; margin-bottom: 0;"><b>Đăng nhập</b></p>
+						</div>
+						<div style="color: gray;font-size: 13px;">-----hoặc-----</div>
+						<div class="style-div">
+							<a href="register.html">Đăng kí</a> cho người mới
+						</div>
+						<div class="center-btn"><input class="form-input" type="text" name="email" placeholder="Email hoặc số điện thoại"></div>
+						<div class="center-btn feedback-input"></div>
+						<div class="center-btn"><input class="form-input" type="password" name="password"placeholder="Mật khẩu"></div>
+						<div class=" center-btn feedback-input"></div>
+						<div class=" center-btn feedback-input"></div>
+						<div class="center-btn">
+							<button type="submit" class="btn-login">Đăng nhập</button>
+						</div>
+					</div>
+					<ul>
+						<li><a href="{% url 'homeLogin' %}">Home</a></li>
+						<li><a href="{% url 'contact' %}">Submit data form</a></li>
+						<li><a href="{% url 'showlist' %}">List Item</a></li>
+						<li><a href="{% url 'product' %}">Upload File</a></li>
+					</ul>
+					<div>
+						{% block content %}
+
+						{% endblock %}
+					</div>
+					
+				</div>
+			</div>
+		</div>
+			
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+
+	</body>
+
+</html>

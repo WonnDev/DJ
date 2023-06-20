@@ -1,0 +1,21 @@
+{% extends 'main/login.html' %}
+
+{% block content %}
+<h1>This is Homepage</h1>
+<h2>Category:</h2>
+{% for item in category %}
+	{% if item.parent == None %}
+		<ul>
+			<li><a href="{{item.id}}">{{item.name}}</a>
+				{% for item2 in category %}
+						{% if item2.parent.name == item.name %}
+							<ul>
+								<li><a href="{{item2.id}}">{{item2.name}}</a></li>
+							</ul>
+						{% endif %}
+				{%  endfor %}
+			</li>
+		</ul>
+	{% endif %}
+{% endfor %}
+{% endblock %}

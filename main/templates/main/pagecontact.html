@@ -1,0 +1,11 @@
+{% extends 'main/login.html' %}
+
+{% block content %}
+(Submit data from form to server) (2 case)
+<form action="{% url 'getContact' %}" method="post">
+<!-- <form action="{% url 'saveContact' %}" method="post"> -->
+	{% csrf_token %}
+	{{ cf.as_p }}
+	<input type="submit" name="submit">
+</form>
+{% endblock %}
